@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            font-family: 'Verdana', sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e0f7fa;
+            background-color: #f5f5f5;
             color: #333;
         }
         header {
@@ -18,9 +18,10 @@
             padding: 20px;
             text-align: center;
             position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
         header .logo img {
-            height: 50px;
+            height: 60px;
         }
         header h1 {
             margin: 10px 0;
@@ -32,7 +33,6 @@
             right: 20px;
         }
         .dropdown {
-            position: relative;
             display: inline-block;
         }
         .dropbtn {
@@ -40,80 +40,69 @@
             border: none;
             padding: 10px 15px;
             cursor: pointer;
-            transition: background 0.3s, color 0.3s;
             border-radius: 5px;
+            transition: background 0.3s;
         }
         .dropbtn:hover {
-            background: #00796b;
+            background: #004d40;
             color: white;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            border-radius: 5px;
-        }
-        .dropdown-content button {
-            color: black;
-            padding: 12px 16px;
-            text-align: left;
-            border: none;
-            width: 100%;
-            cursor: pointer;
-            background: none;
-        }
-        .dropdown-content button:hover {
-            background-color: #ddd;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
         }
         nav {
             background: #004d40;
-            color: white;
             padding: 15px;
             text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         nav a {
-            color: white;
-            margin: 0 15px;
+            color: #b2dfdb;
+            margin: 0 20px;
             text-decoration: none;
+            font-weight: bold;
             transition: color 0.3s;
         }
         nav a:hover {
-            color: #b2dfdb;
+            color: #ffffff;
         }
         .content {
-            padding: 20px;
+            padding: 40px 20px;
             max-width: 900px;
             margin: auto;
         }
         .section {
-            display: none; 
-            background: #fff;
-            padding: 20px;
+            background: #ffffff;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         h2 {
             color: #00796b;
+            font-size: 2em;
+            margin-bottom: 10px;
         }
         footer {
             text-align: center;
-            padding: 15px;
+            padding: 20px;
             background: #00796b;
             color: #fff;
             position: relative;
             bottom: 0;
             width: 100%;
+            margin-top: 20px;
         }
         .article-list {
             list-style: none;
             padding: 0;
+        }
+        .article-list li {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+        .article-list li:hover {
+            transform: scale(1.02);
         }
     </style>
     <script>
@@ -178,7 +167,7 @@
                 welcome: "欢迎",
                 intro: "为您的商业成功提供全面的会计服务。",
                 aboutTitle: "关于我们",
-                aboutText: "FinWise Accounting是一家新成立的会计公司，由专业团队领导，专注于会计和财务。我们致力于提供高质量的服务，以满足每个客户的需求。凭借多样化的经验和知识，我们可以帮助您的企业自信地成长和成功。我们的团队与客户紧密合作，以理解他们的目标和业务需求。我们提供多种服务，如日常会计、税务规划和财务报表准备，以便您可以专注于业务增长，而我们则顺利处理会计。FinWise Accounting准备成为您会计旅程中值得信赖的合作伙伴。",
+                aboutText: "FinWise Accounting是一家新成立的会计公司，由专业团队领导，专注于会计和财务。我们致力于提供高质量的服务，以满足每个客户的需求。凭借多样化的经验和知识，我们可以帮助您的企业自信地成长和成功。我们的团队与客户紧密合作，以理解他们的目标和业务需求。我们提供多种服务，如日常会计、税务规划和财务报表准备，以便您可以专注于业务增长，而我们则顺利处理会计。FinWise Accounting准备成为您每个会计旅程中值得信赖的合作伙伴。",
                 servicesTitle: "我们的服务",
                 services: [
                     "日常会计：专业记账服务，帮助您随时跟踪财务。",
@@ -236,7 +225,7 @@
             document.getElementById('contact-address').innerText = languageData[currentLanguage].contactAddress;
             document.getElementById('contact-phone1').innerText = languageData[currentLanguage].contactPhone1;
             document.getElementById('contact-phone2').innerText = languageData[currentLanguage].contactPhone2;
-            document.getElementById('contact-email').innerHTML = `<a href="mailto:${languageData[currentLanguage].contactEmail}">${languageData[currentLanguage].contactEmail}</a>`;
+            document.getElementById('contact-email').innerHTML = `<a href="mailto:${languageData[currentLanguage].contactEmail}" style="color: #00796b;">${languageData[currentLanguage].contactEmail}</a>`;
         }
 
         function showSection(sectionId) {
@@ -270,10 +259,6 @@
             </div>
         </div>
     </header>
-    
-    <div class="banner">
-        <h1>ยินดีต้อนรับสู่ FinWise Accounting</h1>
-    </div>
 
     <nav>
         <a href="#" onclick="showSection('welcome-section'); return false;">Home</a>
@@ -282,7 +267,7 @@
         <a href="#" onclick="showSection('articles-section'); return false;">บทความ</a>
         <a href="#" onclick="showSection('contact-section'); return false;">ติดต่อเรา</a>
     </nav>
-    
+
     <div class="content">
         <div class="section" id="welcome-section">
             <h2 id="welcome"></h2>
@@ -308,7 +293,7 @@
             <p><strong>อีเมล:</strong> <span id="contact-email"></span></p>
         </div>
     </div>
-    
+
     <footer>
         <p>© 2024 FinWise Accounting | ทุกสิทธิ์สงวน</p>
     </footer>
