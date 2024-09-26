@@ -115,20 +115,7 @@
             list-style: none;
             padding: 0;
         }
-        /* สไตล์สำหรับสไลด์โชว์ */
-        .slideshow-container {
-            max-width: 100%;
-            position: relative;
-            margin: auto;
-            border-radius: 10px;
-        }
-        .mySlides {
-            display: none;
-        }
-        .mySlides img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
+
         }
         .banner {
             background-image: url('file-5l9Otg7v2UCZu5Ovr2r5gWcU.jpg'); /* เปลี่ยนเป็นชื่อไฟล์ของภาพแบรนด์เนอร์ */
@@ -300,10 +287,6 @@
             }, 3000); // เปลี่ยนภาพทุก 3 วินาที
         }
 
-        window.onload = function () {
-            updateContent();
-            showSection('welcome-section');
-            showSlides(); // เรียกใช้ฟังก์ชันสไลด์โชว์
         };
     </script>
 </head>
@@ -341,16 +324,6 @@
         <div class="section" id="welcome-section">
             <h2 id="welcome"></h2>
             <p id="intro"></p>
-            <!-- เพิ่มสไลด์โชว์ในหน้าแรก -->
-            <div class="slideshow-container">
-                <div class="mySlides">
-                  <img src="https://drive.google.com/uc?export=view&id=1KGdOzEOZESWMf1MxhqhXzMmrElM_cPfI" alt="ภาพ" />
-                </div>
-                <div class="mySlides">
-                  <img src="https://drive.google.com/uc?export=view&id=1KMjjwf3H4BudEJafd5lXChmUz6xeAfEh" alt="ภาพ" />
-                </div>
-            </div>
-        </div>
         <div class="section" id="about-section">
             <h2 id="about-title"></h2>
             <p id="about-text"></p>
