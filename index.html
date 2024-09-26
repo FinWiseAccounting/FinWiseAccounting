@@ -115,7 +115,20 @@
             list-style: none;
             padding: 0;
         }
-
+        /* สไตล์สำหรับสไลด์โชว์ */
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+            border-radius: 10px;
+        }
+        .mySlides {
+            display: none;
+        }
+        .mySlides img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
         .banner {
             background-image: url('file-5l9Otg7v2UCZu5Ovr2r5gWcU.jpg'); /* เปลี่ยนเป็นชื่อไฟล์ของภาพแบรนด์เนอร์ */
@@ -287,13 +300,17 @@
             }, 3000); // เปลี่ยนภาพทุก 3 วินาที
         }
 
+        window.onload = function () {
+            updateContent();
+            showSection('welcome-section');
+            showSlides(); // เรียกใช้ฟังก์ชันสไลด์โชว์
         };
     </script>
 </head>
 <body>
     <header>
         <div class="logo">
-        <img src="https://raw.githubusercontent.com/ARTER009/FinWiseAccounting.github.io/main/Screenshot_20240925_170638_Photo Editor.png" alt="Logo">
+            <img src="Screenshot_20240925_170638_Photo Editor.png" alt="FinWise Logo" /> <!-- โลโก้ -->
         </div>
         <h1>FinWise Accounting</h1>
         <div class="language-selector">
@@ -324,9 +341,19 @@
         <div class="section" id="welcome-section">
             <h2 id="welcome"></h2>
             <p id="intro"></p>
+            <!-- เพิ่มสไลด์โชว์ในหน้าแรก -->
+         
+            </div>
+        </div>
         <div class="section" id="about-section">
             <h2 id="about-title"></h2>
             <p id="about-text"></p>
+        </div>
+        <div class="section" id="services-section">
+            <h2 id="services-title"></h2>
+            <ul id="services-list"></ul>
+            <img src="path_to_image/accounting_image.jpg" alt="บริการบัญชี" style="width:100%; height:auto; border-radius:10px;">
+        </div>
         <div class="section" id="articles-section">
             <h2 id="articles-title"></h2>
             <ul id="articles-list" class="article-list"></ul>
@@ -339,6 +366,7 @@
             <p><strong>อีเมล:</strong> <span id="contact-email"></span></p>
         </div>
     </div>
+    
     <footer>
         <p>© 2024 FinWise Accounting | ทุกสิทธิ์สงวน</p>
     </footer>
